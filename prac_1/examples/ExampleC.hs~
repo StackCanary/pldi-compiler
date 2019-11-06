@@ -1,0 +1,16 @@
+module ExampleA where
+
+import Main
+
+
+Datatype A = Ctor_A B | A_Int Int
+Datatype B = Ctor_B A | B_Int Int
+
+decls :: [Decl]
+decls =  [
+          Decl_a "List" [Constr "Cons" ["Int", "List"], Constr "Null" []]
+         ]
+  
+main :: IO ()
+main = do Main.compile decls
+
